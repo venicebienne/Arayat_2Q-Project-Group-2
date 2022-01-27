@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>PSHS-CLC Knowledge Hub</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+        
+        <style>
+             body {
+                background-color: #FAF9F0;
+                width: auto;
+            }
+            
+            .header{
+                background-color: #4D6637; 
+                text-align: center; 
+                width:100%; 
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+            }    
+            
+            .header-mobile{
+                display: none; 
+            }
+            
+            nav{
+                z-index: 1000;
+                padding-top: 100px;
+            }
+            
+            .nav-list {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                background-color: #45503B;
+                position: fixed;
+                height: 100%;
+                overflow: auto;
+                text-align: center; 
+            }
+
+            .nav-icons {
+                display: block;
+                color: #000;
+                padding: 15px 12px;
+                text-decoration: none;
+            }
+
+            .nav-icons:hover {
+                background-color: #04AA6D;
+                color: white;
+            }
+
+            footer{
+                background-color: #4D6637; 
+                width:100%;
+                font-family: 'Poppins', sans-serif;
+                color:#FAF9F0;
+                width:100%; 
+                padding-top: 1%; 
+                padding-bottom: 1%; 
+                
+            }
+            
+            .footer-text{
+                margin-left:90px; 
+                margin-bottom:0; 
+            }
+            
+            .footer-title{
+                font-size: 150%;
+                font-weight: 500; 
+            }
+            
+            .footer-img{
+                margin-left:1%; 
+                margin-right:2%; 
+            }
+            
+            .footer-contact-cont{
+                width:70%; 
+            }
+            
+            .footer-socmed-cont{
+                width:30%; 
+                text-align: right; 
+
+            }
+            
+            .footer-table{
+                width:100%; 
+            }
+            
+            @media (max-width:757px){
+                .header-laptop{
+                    display: none; 
+                }
+                
+                .header-mobile{
+                    display: inline; 
+                }
+                
+                .footer-contact-cont{
+                    width:50%; 
+                }
+                
+                .footer-img{
+                    margin-bottom: 1%;  
+                }
+            }
+            
+            .sticky {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000; 
+                }
+
+            .sticky-lag {
+                padding-top: 100px;
+                }
+            
+            .content{
+                margin-left:49px; 
+            }
+            
+            .student-profile{
+                background-color: #857885; 
+                margin-top: 1.5%;
+                margin-bottom: 1.5%;
+                margin-left: 5%;
+                margin-right: 5%;
+                border-radius: 15px;  
+                padding-top: 1.5%;
+                padding-bottom: 1%;
+                padding-left: 4%;
+                padding-right: 1%;
+
+            }
+            
+            .student-picture img{
+                width:11vw; 
+                height:11vw; 
+            }
+            
+            .student-name-sec-cont{
+                 padding-left:2%;
+                width:50%
+            }
+            
+            .student-name{
+                font-size: 3vw;
+                color: #FAF9F0;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:500;
+                margin:0px; 
+            }
+            
+            .student-sec{
+                font-size: 2.3vw;
+                color: #FAF9F0;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:400;
+                margin:0px; 
+            }
+            
+            .student-contact{
+                font-size: 2.3vw;
+                color: #FAF9F0;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:400;
+                margin:0px; 
+                text-align: right; 
+                display: block;
+            }
+            
+            .student-hr{
+                font-size: 2.3vw;
+                color: #FAF9F0;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:400;
+                margin:0px; 
+                text-align: right; 
+                display: block;
+                color:#011638; 
+            }
+            
+            .student-name-contact-hr-cont{
+                width:50%
+            }
+            
+            .student-contact:hover{
+                text-decoration: none;
+                color:#011638; 
+            }
+            
+            .student-hr:hover{
+                text-decoration: none;
+                color:#FAF9F0; 
+            }
+            
+            .announcements{
+                background-color: #B7B7B8; 
+                margin-top: 1%;
+                margin-bottom: 1.5%;
+                margin-left: 8%;
+                margin-right: 8%;
+                border-radius: 15px;  
+                padding-bottom: 1%;
+                padding-top: 0.5%;
+                
+            }
+            
+            .announcements-header-cont{
+                text-align:center;   
+                border-spacing:100px; 
+            
+            }
+            
+            .announcements-header{
+                font-size: 2.5vw;
+                color: #FAF9F0;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:500;
+                margin:0px;
+                text-align:center;
+            }
+            
+            .announcement-link{
+                font-size: 1.7vw;
+                color: #FAF9F0;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:400;
+                margin:0px;
+            }
+            
+            .announcement-link-cont{
+                padding-left:3%;
+                padding-right:3%;
+                width:100%; 
+            }
+            
+            .announcement-link:hover{
+                text-decoration: none; 
+                color:#011638; 
+            }
+            
+
+            .all-subject-cont{
+                margin-top: 1%;
+                margin-bottom: 1.5%;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+            
+            #bio img{
+                width:8vw;
+                height:6.5vw; 
+            }
+            
+            .all-subject-cont img{
+                width:8vw;
+                height:6.5vw; 
+            }
+            
+            #compsci img{
+                width:8vw;
+                height:6.5vw; 
+            }
+            
+            
+            
+            .subject-link-cont{
+                border-radius: 15px;  
+                background-color: #545454; 
+                padding-top:0.5%;
+                padding-bottom:0.5%;
+                position: relative;
+            }
+            
+            .subject-title-cont{
+                width:40%; 
+            }
+            
+            .subject-title{
+                font-size: 2.5vw;
+                color: #FAF9F0;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:500;
+                text-align: center; 
+            }
+            
+            
+            .progressbar{
+                height:2%;
+                width:70%; 
+                border-color: #774894; 
+                
+            }
+            
+            .progressline {
+                width: 70%;
+                background-color: #FAF9F0;
+                display: inline-block;
+                border-radius: 50px;
+                position: absolute;
+                top: 50%;
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+            }
+
+            .progressbar {
+                width: 60%;
+                height: 0.4vw;
+                background-color: #774894;
+                border-radius: 50px;
+            }
+            
+            .subject-percentage{
+                font-size: 2.5vw;
+                color: #FAF9F0;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:400; 
+            }
+            
+            a:hover{
+                text-decoration:none;
+            }
+            
+            .subject-cell{
+                width:20%; 
+                text-align: center; 
+            }
+            
+            .percentage-cell{
+                width:10%; 
+                text-align: center; 
+            }
+            
+            .progress-cont{
+                width:70%; 
+            }
+            
+            .cont-cont{
+                width:100%;
+            }
+           
+            .subject-links{
+                margin-bottom: 1%; 
+            }
+            
+            #bio a:hover{
+                color:#6E8FCF; 
+            }
+            
+            #chem a:hover{
+                color:#9C6DB8; 
+            }
+            
+            #compsci a:hover{
+                color:#EDDB39; 
+            }
+            
+            #eng a:hover{
+                color:#DB62A3; 
+            }
+            
+            #fili a:hover{
+                color:#DB7B62; 
+            }
+            
+            #math a:hover{
+                color:#83C479; 
+            }
+            
+            #pehm a:hover{
+                color:#DD6577; 
+            }
+            
+            #physics a:hover{
+                color:#E8AB58; 
+            }
+            
+            #socsci a:hover{
+                color:#2E91AB; 
+            }
+            
+            #stat a:hover{
+                color:#8B8B8B; 
+            }
+            
+            #values a:hover{
+                color:#E6BEE2; 
+            }
+            
+            @media (max-width:576px){
+                .nav{
+                    display:none; 
+                }
+                
+                .content{
+                    margin-left: 0px;
+                    padding-top: 100px; 
+                }
+                
+                .footer-text{
+                margin-left:5%; 
+                }
+            }
+            
+            .nav-icons img{
+                width:25px;
+                height:25px; 
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <header>
+            <div class="col-sm-12 header" id="myHeader"> 
+                <a href="dashboard.html"><img src="https://lh3.googleusercontent.com/622fv84S7CPypJ-jErVsAYV-ed6DTRF06Wig_PNkPZLiuBJ4UDvg_WJUQJXlkAJCHN1dGMiVgWVJI0HzicShQUQdZTD5yhsfbbW93OYtzGMxU_3I4K8JEy_R-WMOzjJ8nDdmC2VFQA=w2400" alt="header" class="header-laptop"></a>
+                <a href="dashboard.html"><img src="https://lh3.googleusercontent.com/K2IGB9gR-x1t7pR6o9mo5t5jrbWWp0PwrQ1uXb5G0503o9ptUDKbfm7MVLbA1FVV5JjSZgmB5mXCafYOv97JiP-l_rGnDsL-XIRrLfsYroLwQYGdck-_0RNPiL8cEQQ3YckXtNL9Iw=w2400" alt="header mobile" class="header-mobile"></a> 
+            </div>
+        </header>
+        
+        <nav class="nav" id="myNav">
+            <ul class="nav-list">
+              <li><a class="nav-icons" href="dashboard.html"><img src="https://lh3.googleusercontent.com/OxaHYhCpMKaaKlrGXVnKAgTmCdi7lJzDf3IQbEQ2turqz0lb1BJ-Z_QOu55OQa9kbrY1BcdTGLwF63n7pmZ1MS4TkRhbiB5br6Ifq3oMjjaWcV6fLMoszqQT5iPp96YCl02G7s5Yvw=s300-p-k" alt="home"></a></li>
+              <li><a class="nav-icons" href="#"><img src="https://lh3.googleusercontent.com/zCdpxD4yN4wpmR9tR4ZvWSkhdKDk8IYJLOfci9KYNvsKoyelx1Jrtsrw8hFsrqB4NjQShdXESJr9kU0ePqztd4MSSynZAeY_DcieuK1V76AGNrteL0dcM0vOEsRQ8w02J50DQqYv7Q=s300-p-k" alt="notif"></a></li>
+              <li><a class="nav-icons" href="author_page/about_us.html"><img src="https://lh3.googleusercontent.com/IK1p9WUksYZ4BiOAT8f71yq5WmoV1eWZ86njfU-JZUdASpPYPD_VPit-vEty6Q7kbBP3aNpeQw6hiaCZqRxJposf4rdCACOi5KVj7gVlRoHS0_LPHReKXyU5jraLicZetceWdb_Wlg=s300-p-k" alt="group"></a></li>
+            </ul>
+        </nav>
+        
+        <div class="content" id="myContent">
+            <div class="student-profile">
+                <table>
+                    <tr>
+                        <td class="student-picture"> 
+                            <img src="https://lh3.googleusercontent.com/9sFQ0bDiSMqv48GzTqnN-7vfR0njHTkv6Rs3lQWyLaECl1iaB99-NPlIUgBPjwW5rQcv-PjSoQ2GwttdcLf6l5aRBfmoyhIexHNkmBE9qBPpOvAChrnKj3lU2VzxVRw56zXHi2KrRg=s168-p-k" alt="student profile">
+                        </td>
+                        <td class="student-name-sec-cont">
+                            <p class="student-name">Peter Parker</p>
+                            <p class="student-sec">9-Arayat</p>
+                        </td>
+                        <td class="student-name-contact-hr-cont">
+                            <a href="#" class="student-contact">Contact Details</a>
+                            <a href="#"  class="student-hr">Arayat HR</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="announcements">
+                <p class="announcements-header">Latest Announcements</p>
+                <div class="announcement-link-cont">
+                    <a href="https://scontent-nrt1-1.xx.fbcdn.net/v/t1.15752-9/270374066_1168606527215176_7270421245814177497_n.png?_nc_cat=103&ccb=1-5&_nc_sid=ae9488&_nc_ohc=_WKT1UxN_WwAX80aQSK&_nc_ht=scontent-nrt1-1.xx&oh=03_AVLZVYNhhLFs1Djl13Ak4hO_whJtUeyrfoVxHMUsL-gMPg&oe=6209DB9C&dl=1" class="announcement-text announcement-link">CLC Admin denies scholars of a long-needed break despite the growing number of sick students and faculty. Although students expressed their distate towards this decision, the Admin cites that, "The number of affected individuals is too low" as their reasoning for this haughty denial.</a>
+                </div>
+            </div>
+            
+            <div class="all-subject-cont">
+                <div id="bio" class="subject-links">
+                    <img class="subject-img" src="https://lh3.googleusercontent.com/LSOJz3pC4viVfVKazQmjqZTDNs2D3RFjooaFAnyxKUkJRMxfhhxZ1K74EpAkilzuej__u_bKMAgjE_60t6pjmVFPPUufcxaGua0mcGsOMpX5tikddOCU6Mj4dvg0e8tK0SnelrlXfQ=w2400" alt="bio">
+                    <div class="subject-link-cont">
+                        <table class="cont-cont">
+                            <tr class="cont-cont">
+                                <td class="subject-cell">
+                                    <span class="subject-title-cont">
+                                        <a href="course_pages/bio_course.html" class="subject-title">Biology</a>
+                                    </span>
+                                </td>
+                                <td class="progress-cont">
+                                    <div class="progressline">
+                                        <div class="progressbar" style="width: 55%; background-color: #4569AF;">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="percentage-cell">
+                                    <a href="grade_pages/bio_grades.html" class="subject-percentage">55%</a>
+                                </td>
+                            </tr>
+                        </table>
+                     </div>
+                </div>
+                
+                <div id="chem" class="subject-links">
+                    <img class="subject-img" src="https://lh3.googleusercontent.com/vHsBksL0nD_Xp1rUT9flCE8ZZua-oL0of1LwQUioZx2cUmKc1J3N9LxKNqfwatcVb0A8xLyYby0xr_AoNV3Z1TwgsReZ-toX7annaoCSKdecf4KuWQzAPi7vwB1G4LcUnMHm2nqs0g=w2400" alt="chem">
+                    <div class="subject-link-cont">
+                        <table class="cont-cont">
+                            <tr class="cont-cont">
+                                <td class="subject-cell">
+                                    <span class="subject-title-cont">
+                                        <a href="course_pages/chem_course.html" class="subject-title">Chemistry</a>
+                                    </span>
+                                </td>
+                                <td class="progress-cont">
+                                    <div class="progressline">
+                                        <div class="progressbar" style="width: 70%; background-color: #774894;">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="percentage-cell">
+                                    <a href="course_pages/chem_course.html" class="subject-percentage">70%</a>
+                                </td>
+                            </tr>
+                        </table>
+                     </div>
+                </div>
+                
+                <div id="compsci" class="subject-links">
+                    <img class="subject-img" src="https://lh3.googleusercontent.com/dxyAp5BI10jFAh5hGdzVMDpgs5GzWIj-AMt-fGdPoW85OH9uS641IN4GV5zF6qEToVyhuzEnYknKN05cLHrE6kd-m_t5q49UjLr2TQMP6_ARcM9J6aqMhuKTCmvmdBbu4QR42DF5lw=w2400" alt="compsci">
+                    <div class="subject-link-cont">
+                        <table class="cont-cont">
+                            <tr class="cont-cont">
+                                <td class="subject-cell">
+                                    <span class="subject-title-cont">
+                                        <a href="course_pages/comsci_course.html" class="subject-title">Computer Science</a>
+                                    </span>
+                                </td>
+                                <td class="progress-cont">
+                                    <div class="progressline">
+                                        <div class="progressbar" style="width: 100%; background-color: #C6B62B;">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="percentage-cell">
+                                    <a href="grade_pages/comsci_grades.html" class="subject-percentage">100%</a>
+                                </td>
+                            </tr>
+                        </table>
+                     </div>
+                </div>
+                
+                <div id="eng" class="subject-links">
+                    <img class="subject-img" src="https://lh3.googleusercontent.com/3q-t5v0tqBBaFmRL4IexxdV9ZVjCK9sUSUuFKp2tvti6R4ofxeEjD-JjrgN1y09QPFNxbKQp_srd_0YY-4YvQt7sKmZ2i-uC_tGpMZ6WbdzhaCz6rVaXsIYPNSJHy4ybZ60vvFiQxw=w2400" alt="eng">
+                    <div class="subject-link-cont">
+                        <table class="cont-cont">
+                            <tr class="cont-cont">
+                                <td class="subject-cell">
+                                    <span class="subject-title-cont">
+                                        <a href="course_pages/english_course.html" class="subject-title">English</a>
+                                    </span>
+                                </td>
+                                <td class="progress-cont">
+                                    <div class="progressline">
+                                        <div class="progressbar" style="width: 95%; background-color: #C2327F;">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="percentage-cell">
+                                    <a href="grade_pages/eng_grades.html" class="subject-percentage">95%</a>
+                                </td>
+                            </tr>
+                        </table>
+                     </div>
+                </div>
+                
+                <div id="fili" class="subject-links">
+                    <img class="subject-img" src="https://lh3.googleusercontent.com/rHhm9zUa2ed0KmXhDXmACM7JYrl-hH-vK7tfyw6wyOPDATaTOKXmF9faMhDRERrtqBXbz13a0FY087rwSopUdN1bEdq1-fIqUWQkExuR3zMsOehUGOgO27mQtHP3drOtVa6g5PX83g=w2400" alt="fili">
+                    <div class="subject-link-cont">
+                        <table class="cont-cont">
+                            <tr class="cont-cont">
+                                <td class="subject-cell">
+                                    <span class="subject-title-cont">
+                                        <a href="course_pages/fili_course.html" class="subject-title">Filipino</a>
+                                    </span>
+                                </td>
+                                <td class="progress-cont">
+                                    <div class="progressline">
+                                        <div class="progressbar" style="width: 45%; background-color: #CD5B3C;">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="percentage-cell">
+                                    <a href="grade_pages/fili_grades.html" class="subject-percentage">45%</a>
+                                </td>
+                            </tr>
+                        </table>
+                     </div>
+                </div>
+                
+                <div id="math" class="subject-links">
+                    <img class="subject-img" src="https://lh3.googleusercontent.com/KPMsi-jHH1OWsHGHGZOMQliZZ7qyneJ5H-JQAqbGrANtQCug4IVRItDxIpORoV_yp2dM2rOy9McliFS49zIJsynZwcjapVWxK6N2QrLZcyTq8UvrCx8DiWfOdYw6jNgRkB6Sevqo5A=w2400" alt="math" >
+                    <div class="subject-link-cont">
+                        <table class="cont-cont">
+                            <tr class="cont-cont">
+                                <td class="subject-cell">
+                                    <span class="subject-title-cont">
+                                        <a href="course_pages/math_course.html" class="subject-title">Math</a>
+                                    </span>
+                                </td>
+                                <td class="progress-cont">
+                                    <div class="progressline">
+                                        <div class="progressbar" style="width: 80%; background-color: #4C9F40;">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="percentage-cell">
+                                    <a href="grade_pages/math_grades.html" class="subject-percentage">80%</a>
+                                </td>
+                            </tr>
+                        </table>
+                     </div>
+                </div>
+                
+                <div id="pehm" class="subject-links">
+                    <img class="subject-img" src="https://lh3.googleusercontent.com/zQMCJHx6CgCKHljaIcxn-NXmwoQhlEN8NqwuohUHWSzP1Rej1EH0tI_bDFa3XLZinNQDozi0UxfZq7b6387dGtEC1oC3A3dqa14OGMDVRWMCJlJ7Nrqt8pPCaTTp4CQn_pqVQOWocg=w2400" alt="pehm">
+                    <div class="subject-link-cont">
+                        <table class="cont-cont">
+                            <tr class="cont-cont">
+                                <td class="subject-cell">
+                                    <span class="subject-title-cont">
+                                        <a href="course_pages/pehm_course.html" class="subject-title">P.E.H.M</a>
+                                    </span>
+                                </td>
+                                <td class="progress-cont">
+                                    <div class="progressline">
+                                        <div class="progressbar" style="width: 100%; background-color: #CD364D;">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="percentage-cell">
+                                    <a href="grade_pages/pehm_grades.html" class="subject-percentage">100%</a>
+                                </td>
+                            </tr>
+                        </table>
+                     </div>
+                </div>
+                    
+                <div id="physics" class="subject-links">
+                    <img class="subject-img" src="https://lh3.googleusercontent.com/5cuZQcJZluQFI_hzRBkoszwNMfZExsRFQ0A6fe077W9dFc_22UiFXDmn_MLEZLIGGcWlQA5_yG9kAKWzBWyvA-xT1ODakXaqfc8qJNXOEfg65pokCxAbfi9mS4EHXWzQSUaGw7BT2Q=w2400" alt="physics">
+                    <div class="subject-link-cont">
+                        <table class="cont-cont">
+                            <tr class="cont-cont">
+                                <td class="subject-cell">
+                                    <span class="subject-title-cont">
+                                        <a href="course_pages/physics_course.html" class="subject-title">Physics</a>
+                                    </span>
+                                </td>
+                                <td class="progress-cont">
+                                    <div class="progressline">
+                                        <div class="progressbar" style="width: 35%; background-color: #C88832;">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="percentage-cell">
+                                    <a href="grade_pages/physics_grades.html" class="subject-percentage">35%</a>
+                                </td>
+                            </tr>
+                        </table>
+                     </div>
+                </div>
+                
+                <div id="socsci" class="subject-links">
+                    <img class="subject-img" src="https://lh3.googleusercontent.com/UVcvlGMVUahJMrnAZoBjE31A5jhWnhx2afgczrxhT2vodDfjNy58riYPxD4ESY0B3yBD4UtsigSKxefN2PvVgo33ugaA4Yzfh9Px3Gixb7bU34TAtrF_j56iEQuBZTsKavxoeglb_g=w2400"  alt="socsci" >
+                    <div class="subject-link-cont">
+                        <table class="cont-cont">
+                            <tr class="cont-cont">
+                                <td class="subject-cell">
+                                    <span class="subject-title-cont">
+                                        <a href="course_pages/socsci_course.html" class="subject-title">Social Science</a>
+                                    </span>
+                                </td>
+                                <td class="progress-cont">
+                                    <div class="progressline">
+                                        <div class="progressbar" style="width: 50%; background-color: #2D6E8B;">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="percentage-cell">
+                                    <a href="grade_pages/socsci_grades.html" class="subject-percentage">50%</a>
+                                </td>
+                            </tr>
+                        </table>
+                     </div>
+                </div>
+                
+                <div id="stat" class="subject-links">
+                    <img class="subject-img" src="https://lh3.googleusercontent.com/8X3TebQyUrpGnToR0O4UYb9a0hMBhYVvzwUvPS0soOT1jEsjmXQtQ-Lfi1OnYkP-1I8cFWMqAPNG41YPj8NUWpNhmS32_j9Y8SZqQrAutyn5aA3NiE8xqedILbmxETWyh6nniKvoig=w2400"  alt="stat" >
+                    <div class="subject-link-cont">
+                        <table class="cont-cont">
+                            <tr class="cont-cont">
+                                <td class="subject-cell">
+                                    <span class="subject-title-cont">
+                                        <a href="course_pages/stat_course.html" class="subject-title">Statistics</a>
+                                    </span>
+                                </td>
+                                <td class="progress-cont">
+                                    <div class="progressline">
+                                        <div class="progressbar" style="width: 10%; background-color: #8B8B8B;">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="percentage-cell">
+                                    <a href="grade_pages/stat_grades.html" class="subject-percentage">10%</a>
+                                </td>
+                            </tr>
+                        </table>
+                     </div>
+                </div>
+                
+                <div id="values" class="subject-links">
+                    <img class="subject-img" src="https://lh3.googleusercontent.com/qKyCLiLuxu0W0ANBBrDiDLl0J8-8MgDyeNgD2FryxIpQKgkG-ufsf7vwjanhh4cNZeer9tWGbDpB3PHp0RewNTtuvtcjkgDWTMIo38wo6NUBRXxxUPDBRgy4xuYkh_Nfq80jwzL2vA=w2400" alt="valed">
+                    <div class="subject-link-cont">
+                        <table class="cont-cont">
+                            <tr class="cont-cont">
+                                <td class="subject-cell">
+                                    <span class="subject-title-cont">
+                                        <a href="course_pages/valed_course.html" class="subject-title">Values Education</a>
+                                    </span>
+                                </td>
+                                <td class="progress-cont">
+                                    <div class="progressline">
+                                        <div class="progressbar" style="width: 90%; background-color: #DF96D8;">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="percentage-cell">
+                                    <a href="grade_pages/valed_grades.html" class="subject-percentage">90%</a>
+                                </td>
+                            </tr>
+                        </table>
+                     </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <footer>
+            <table class="footer-table">
+                <tr>
+                    <td class="footer-contact-cont">
+                        <p class="footer-title footer-text">PSHS-CLC</p>
+                        <p class="footer-text">Lily Hill, Clark, Angeles, Pampanga</p>
+                        <p class="footer-text">0999-333-3333</p>
+                        <p class="footer-text">khub@clc.pshs.edu.ph</p>
+                    </td>
+                    <td class="footer-socmed-cont">
+                        <a href="https://www.facebook.com/pshsclc/" class="footer-img"><img src="https://lh3.googleusercontent.com/H9PdnpXae8YtuIAxPoCe9m1g2tHQ7TKHjxkYNUK1_7oSE0aUArmcB8TPtUINNuq5xos9404uix6DHUVEuN36xX6aE3VpAV4c53XWWOu9VYTVjLW-DGWtrXMXRXB8s0WAjUAMajZptw=s60-p-k" alt="fb" ></a>
+                        <a href="https://www.instagram.com/pshs_clc" class="footer-img"><img src="https://lh3.googleusercontent.com/9freN4Vt9mmb8LCT9-2EBVrm40OWz6dkJKIPLeXI6Qx9c2LhCDxR-qildPE5ijB8pW2xehsJ6hdlimfFnTOB9-juERsEg8o5TUE0Yh1JVakGg7eXL41msnWmfp5HOkBWSEuStkc8Dg=s60-p-k" alt="ig"></a>
+                        <a href="https://twitter.com/pshs_clc" class="footer-img"><img src="https://lh3.googleusercontent.com/2aq1KLuOkp7jzydEw_tvZwKX3z0bYfthk6467nixWQEHYyv0PeNNQlej0FxMW_eV4nggSdd3UTMuZw4ylno1YH44428oLKnGothWKQZSK-hvAThK2AimuKoelZqgUk6-rI0ULFgC3Q=s60-p-k" alt="twt"></a>
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </body>
+</html>

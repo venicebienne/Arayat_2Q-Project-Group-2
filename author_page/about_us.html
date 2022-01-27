@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>PSHS-CLC Knowledge Hub</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+        
+        <style>
+             body {
+                background-color: #FAF9F0;
+                width: auto;
+            }
+            
+            .header{
+                background-color: #4D6637; 
+                text-align: center; 
+                width:100%; 
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+            }    
+            
+            .header-mobile{
+                display: none; 
+            }
+            
+            nav{
+                z-index: 1000;
+                padding-top: 100px;
+            }
+            
+            .nav-list {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                background-color: #45503B;
+                position: fixed;
+                height: 100%;
+                overflow: auto;
+                text-align: center; 
+            }
+
+            .nav-icons {
+                display: block;
+                color: #000;
+                padding: 15px 12px;
+                text-decoration: none;
+            }
+
+            .nav-icons:hover {
+                background-color: #04AA6D;
+                color: white;
+            }
+
+            footer{
+                background-color: #4D6637; 
+                width:100%;
+                font-family: 'Poppins', sans-serif;
+                color:#FAF9F0;
+                width:100%; 
+                padding-top: 1%; 
+                padding-bottom: 1%; 
+                float: left;
+                
+            }
+            
+            .footer-text{
+                margin-left:90px; 
+                margin-bottom:0; 
+            }
+            
+            .footer-title{
+                font-size: 150%;
+                font-weight: 500; 
+            }
+            
+            .footer-img{
+                margin-left:1%; 
+                margin-right:2%; 
+            }
+            
+            .footer-contact-cont{
+                width:70%; 
+            }
+            
+            .footer-socmed-cont{
+                width:30%; 
+                text-align: right; 
+
+            }
+            
+            .footer-table{
+                width:100%; 
+            }
+            
+            @media (max-width:757px){
+                .header-laptop{
+                    display: none; 
+                }
+                
+                .header-mobile{
+                    display: inline; 
+                }
+                
+                .footer-contact-cont{
+                    width:50%; 
+                }
+                
+                .footer-img{
+                    margin-bottom: 1%;  
+                }
+            }
+            
+            .sticky {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000; 
+                }
+
+            .sticky-lag {
+                padding-top: 100px;
+                }
+            
+            .content{
+                margin-left:49px; 
+            }
+            
+             @media (max-width:576px){
+                .nav{
+                    display:none; 
+                }
+                
+                .content{
+                    margin-left: 0px;
+                    padding-top: 100px; 
+                }
+                
+                .footer-text{
+                margin-left:5%; 
+                }
+            }
+            
+            .nav-icons img{
+                width:25px;
+                height:25px; 
+            }
+            
+            .about-us-cont{
+                margin-top:3%;
+                margin-left:4%;
+                margin-right:3%;
+                margin-bottom:3%;
+                
+            }
+            
+            .title-main-cont{
+                background-color: #857885; 
+                border-radius: 15px; 
+                float:left;
+                width:100%; 
+                
+            }
+            
+            .title-cont{
+                margin-top:1%;
+                margin-bottom:1%;
+                margin-left:1%;
+                margin-right:1%;
+                background-image: url(https://lh3.googleusercontent.com/Y-ILA2jOYe3OrFcTuW-LBdIUE8-JoX42ovkdldoKERs5W0Vztno3yT7Y-miuvwqfi7XWiy48jex1a1Q09DXG_8BsmV5KnT6WipvdlVAMAF17MSgyD4mhNE5-tRA3LbjO0uBUbPA4yA=w2400);
+                background-position: center;
+                background-size: cover;
+                border-radius: 15px; 
+                padding-top: 3%;
+                padding-bottom:  3% ;
+                
+            }
+            
+            .title-cont-text{
+                font-family: 'Poppins', sans-serif;
+                color:#FAF9F0;
+                font-size:12vw;
+                opacity: 1; 
+                text-align: center; 
+            }
+            
+            p{
+                margin:0
+            }
+            
+            .img-portrait-right{
+                width: 31vw;
+                height: 31vw;
+                float:left;
+                border-radius: 15px;
+                margin-bottom: 2.5vw;
+                margin-top: 2.5vw;
+            }
+            
+            .img-portrait-left{
+                width: 31vw;
+                height: 31vw;
+                float:left;
+                border-radius: 15px;
+                margin-left: 0vw;
+            }
+            
+            .profile-about-cont-right{
+                background-color: #857885; 
+                border-radius: 15px; 
+                float:left;
+                font-family: 'Poppins', sans-serif;
+                color:#FAF9F0;
+                margin-left: 2.5vw; 
+                margin-bottom: 2.5vw;
+                margin-top: 2.5vw;
+                width:60%; 
+                height:31vw; 
+            }
+            
+            .profile-about-cont-left{
+                background-color: #857885; 
+                border-radius: 15px; 
+                float:left;
+                font-family: 'Poppins', sans-serif;
+                color:#FAF9F0;
+                margin-right: 2.5vw; 
+                width:60%; 
+                height:31vw; 
+            }
+            
+            .about-txt-cont{
+                margin-top:2%;
+                margin-left:2%;
+                margin-right:2%;
+                margin-bottom:2%;
+            }
+            
+            .name-about-text{
+                font-size:2vw;
+            }
+            
+            .desc-about-text{
+                font-size:1.5vw;
+                margin-top:2%;
+            }
+            
+            .left-cont{
+                padding-top:0; 
+            }
+            
+            .right-cont2{
+                padding-top:0; 
+            }
+            
+            .left-cont2{
+                padding-top:38%; 
+            }
+            
+            .profile-about-cont-left-hidden{
+                display:none;
+            }
+            
+            @media (max-width:768px){
+                .img-portrait-right{
+                    float:none; 
+                    text-align: center; 
+                    margin-bottom: 0;
+                    text-align: center;
+                    width:40%;
+                    height:40%;
+                }
+                
+                .center-img-later{
+                    text-align: center;
+                }
+                
+                 .profile-about-cont-right{
+                     float:none;
+                     width:95%;
+                     margin-left:0;
+                     margin-top: 0;
+                     height:25%;
+                     margin-left: 2%;
+                }
+                
+                .name-about-text{
+                    font-size:150%;
+                    padding-top:2%;
+                }
+            
+                .desc-about-text{
+                    font-size:100%;
+                    margin-top:1%;
+                }
+                
+                .left-cont{
+                    padding-top:0;
+                }
+                
+                .left-cont2{
+                    padding-top:0;
+                }
+                
+                .right-cont2{
+                    padding-top:0;
+                }
+                
+                .img-portrait-left{
+                    float:none;
+                    width:40%;
+                    height:40%;
+                }
+                .profile-about-cont-left{
+                    float:none;
+                    display: none;
+                }
+                
+                .profile-about-cont-left-hidden{
+                    background-color: #857885; 
+                    border-radius: 15px; 
+                    font-family: 'Poppins', sans-serif;
+                    color:#FAF9F0;
+                    margin-left:2%;
+                    width:95%; 
+                    display:block;
+                    height:25%;
+                }
+                
+                
+            }
+        </style>
+    </head>
+    
+    <body>
+        <header>
+            <div class="col-sm-12 header" id="myHeader"> 
+                <a href="../dashboard.html"><img src="https://lh3.googleusercontent.com/622fv84S7CPypJ-jErVsAYV-ed6DTRF06Wig_PNkPZLiuBJ4UDvg_WJUQJXlkAJCHN1dGMiVgWVJI0HzicShQUQdZTD5yhsfbbW93OYtzGMxU_3I4K8JEy_R-WMOzjJ8nDdmC2VFQA=w2400" alt="header" class="header-laptop"></a>
+                <a href="../dashboard.html"><img src="https://lh3.googleusercontent.com/K2IGB9gR-x1t7pR6o9mo5t5jrbWWp0PwrQ1uXb5G0503o9ptUDKbfm7MVLbA1FVV5JjSZgmB5mXCafYOv97JiP-l_rGnDsL-XIRrLfsYroLwQYGdck-_0RNPiL8cEQQ3YckXtNL9Iw=w2400" alt="header mobile" class="header-mobile"></a> 
+            </div>
+        </header>
+        
+        <nav class="nav" id="myNav">
+            <ul class="nav-list">
+              <li><a class="nav-icons" href="../dashboard.html"><img src="https://lh3.googleusercontent.com/OxaHYhCpMKaaKlrGXVnKAgTmCdi7lJzDf3IQbEQ2turqz0lb1BJ-Z_QOu55OQa9kbrY1BcdTGLwF63n7pmZ1MS4TkRhbiB5br6Ifq3oMjjaWcV6fLMoszqQT5iPp96YCl02G7s5Yvw=s300-p-k" alt="home"></a></li>
+              <li><a class="nav-icons" href="#"><img src="https://lh3.googleusercontent.com/zCdpxD4yN4wpmR9tR4ZvWSkhdKDk8IYJLOfci9KYNvsKoyelx1Jrtsrw8hFsrqB4NjQShdXESJr9kU0ePqztd4MSSynZAeY_DcieuK1V76AGNrteL0dcM0vOEsRQ8w02J50DQqYv7Q=s300-p-k" alt="notif"></a></li>
+              <li><a class="nav-icons" href="about_us.html"><img src="https://lh3.googleusercontent.com/IK1p9WUksYZ4BiOAT8f71yq5WmoV1eWZ86njfU-JZUdASpPYPD_VPit-vEty6Q7kbBP3aNpeQw6hiaCZqRxJposf4rdCACOi5KVj7gVlRoHS0_LPHReKXyU5jraLicZetceWdb_Wlg=s300-p-k" alt="about-us"></a></li>
+            </ul>
+        </nav>
+        
+        <div class="content" id="myContent">
+            <div class="about-us-cont">
+                <div class="title-main-cont">
+                    <div class="title-cont">
+                        <p class="title-cont-text">ABOUT US</p>
+                    </div>
+                </div>
+                
+                <div class="right-cont">
+                    <div class="center-img-later">
+                    <img src="https://lh3.googleusercontent.com/ZfFQxTcDSQBSGKlgTyaMW1WaxSK5fdUhJqQ99QRY9S1jA_YYuDLJ0-i2kBvFM0UNmnklkk0kMrHLwpcucrtFQb31akp0BDBRTJXIDq1uweX6mGUz8jsC5EAwhAjglHu_TCZ-MeQ9Zw=w2400" alt="enzutot" class="img-portrait-right">
+                    </div>
+                    <div class="profile-about-cont-right">
+                        <div class="about-txt-cont">
+                            <p class="name-about-text">Banzon, Leonpol Lorenzo</p>
+                            <p class="desc-about-text">Birthday: September 28, 2006<br/>Zodiac Sign: Libra<br/>Life Motto: Would I rather be feared or loved? Easy, both. I want people to be afraid of how much they love me.<br/>- Michael Scott<br/><br/>Role: In charge of this wonderful ABOUT US page you are reading right now where you will get to know the crew, the great minds behind this Knowledge Hub</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="left-cont">
+                    <div class="profile-about-cont-left">
+                        <div class="about-txt-cont">
+                            <p class="name-about-text">Canto, Kurt Nathaniel</p>
+                            <p class="desc-about-text">Birthday: October 18, 2006<br/>Zodiac Sign: Libra<br/>Life Motto: "No capes!"<br/>-Edna Mode<br/><br/>Role: Creator of our Knowledge Hub's beautiful DASHBOARD and the first page you see as you open our site before logging in, making learners ready for learning as they enter this hub</p>
+                        </div>
+                    </div>
+                    <div class="center-img-later">
+                    <img src="https://lh3.googleusercontent.com/6mviT0Y1C8BVZi6rxK4lz9tYfdlijnpJcCxNpp9GvtUn0Z2ebMyMF-qQhr9A4cb7TTx9ECrxF80RTajyBPTfXLKKTcFcBRQ3Q8RlM78bdQgaS-KIvg7UWboMHVID2siGZmB76TUzKA=w2400" alt="kurt" class="img-portrait-left">
+                    </div>
+                    <div class="profile-about-cont-left-hidden">
+                        <div class="about-txt-cont">
+                            <p class="name-about-text">Canto, Kurt Nathaniel</p>
+                            <p class="desc-about-text">Birthday: October 18, 2006<br/>Zodiac Sign: Libra<br/>Life Motto: "No capes!"<br/>-Edna Mode<br/><br/>Role: Creator of our Knowledge Hub's beautiful DASHBOARD and the first page you see as you open our site before logging in, making learners ready for learning as they enter this hub</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-cont2">
+                    <div class="center-img-later">
+                    <img src="https://lh3.googleusercontent.com/Uf1Lhb89dFjnKBX_jYnbqFyoDN0z8V6dr9Aaomg7FFB2VnqP72pjWDtxP4E7jr78w1eJYus_d0QEMP68hOuRpPT6mxPLeNK-gQ-5h-KLoNJ2HQGXuqCyS6deLWuGsWYxlLmH-jJS0A=w2400" alt="jen" class="img-portrait-right">
+                    </div>
+                    <div class="profile-about-cont-right">
+                        <div class="about-txt-cont">
+                            <p class="name-about-text">Galleno, Jennalyn</p>
+                            <p class="desc-about-text">Birthday: August 25, 2006<br/>Zodiac Sign: Virgo<br/>Life Motto: “I think you should experience it. You always say you want to experience things but I don’t think you actually want to experience things because you would experience it if you wanted to experience things”<br/>- Kendall Jenner<br/><br/>Role: The coder behind our unique GRADES page who put in very hard work into this page where we see the results of our own hard work</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="left-cont2">
+                    <div class="profile-about-cont-left">
+                        <div class="about-txt-cont">
+                            <p class="name-about-text">Garcia, Venice Bienne</p>
+                            <p class="desc-about-text">Birthday: June 6, 2006<br/>Zodiac Sign: Gemini<br/>Life Motto: "It matters not, what you've done, but what you do with what you've done... for others"<br/>- Noah Centineo“<br/><br/>Role: Responsible for all the very colorful and vibrant COURSE pages, from Biology to Values Education, that will make you want to learn something new everyday!</p>
+                        </div>
+                    </div>
+                    <div class="center-img-later">
+                    <img src="https://lh3.googleusercontent.com/um5CFTMozmH7gtgqXxbKu5J9bYztXZoD6XGkOkkcYRpwu7Y2ATIz05FmUxsU6_893GVepj1iQiQVk2vp-v-qpon-PYU5BNhG0d0SPqB3YPoaFAB3naxv9Jo6GpLj3tdFaJsqAvnIEA=w2400" alt="venice" class="img-portrait-left">
+                    </div>
+                    <div class="profile-about-cont-left-hidden">
+                        <div class="about-txt-cont">
+                            <p class="name-about-text">Garcia, Venice Bienne</p>
+                            <p class="desc-about-text">Birthday: June 6, 2006<br/>Zodiac Sign: Gemini<br/>Life Motto: "It matters not, what you've done, but what you do with what you've done... for others"<br/>- Noah Centineo“<br/><br/>Role: Responsible for all the very colorful and vibrant COURSE pages, from Biology to Values Education, that will make you want to learn something new everyday!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-cont2">
+                    <div class="center-img-later">
+                        <img src="https://scontent.fmnl25-3.fna.fbcdn.net/v/t1.15752-9/271941352_1101702670592976_3464476956365912892_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=ae9488&_nc_ohc=ibRa5HqZFPAAX9DsgDG&_nc_ht=scontent.fmnl25-3.fna&oh=03_AVI27pS4Fkvo_0MCaTgUVOLa8Ph6cG_CuKorv7vYo3MQOQ&oe=6216DCFE" alt="beat" class="img-portrait-right">
+                    </div>
+                    <div class="profile-about-cont-right">
+                        <div class="about-txt-cont">
+                            <p class="name-about-text">Salunga, Bea Angela</p>
+                            <p class="desc-about-text">Birthday: October 10, 2006<br/>Zodiac Sign: Libra<br/>Life Motto: "Two steps forward and one step back is still one step forward" - Rosa Diaz<br/><br/>Role: The one who made our QUIZ page for every course where we get to apply the things we learned from this Knowledge Hub, and where the examination may be difficult, but atleast you'll enjoy staring at it</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <footer>
+            <table class="footer-table">
+                <tr>
+                    <td class="footer-contact-cont">
+                        <p class="footer-title footer-text">PSHS-CLC</p>
+                        <p class="footer-text">Lily Hill, Clark, Angeles, Pampanga</p>
+                        <p class="footer-text">0999-333-3333</p>
+                        <p class="footer-text">khub@clc.pshs.edu.ph</p>
+                    </td>
+                    <td class="footer-socmed-cont">
+                        <a href="https://www.facebook.com/pshsclc/" class="footer-img"><img src="https://lh3.googleusercontent.com/H9PdnpXae8YtuIAxPoCe9m1g2tHQ7TKHjxkYNUK1_7oSE0aUArmcB8TPtUINNuq5xos9404uix6DHUVEuN36xX6aE3VpAV4c53XWWOu9VYTVjLW-DGWtrXMXRXB8s0WAjUAMajZptw=s60-p-k" alt="fb" ></a>
+                        <a href="https://www.instagram.com/pshs_clc" class="footer-img"><img src="https://lh3.googleusercontent.com/9freN4Vt9mmb8LCT9-2EBVrm40OWz6dkJKIPLeXI6Qx9c2LhCDxR-qildPE5ijB8pW2xehsJ6hdlimfFnTOB9-juERsEg8o5TUE0Yh1JVakGg7eXL41msnWmfp5HOkBWSEuStkc8Dg=s60-p-k" alt="ig"></a>
+                        <a href="https://twitter.com/pshs_clc" class="footer-img"><img src="https://lh3.googleusercontent.com/2aq1KLuOkp7jzydEw_tvZwKX3z0bYfthk6467nixWQEHYyv0PeNNQlej0FxMW_eV4nggSdd3UTMuZw4ylno1YH44428oLKnGothWKQZSK-hvAThK2AimuKoelZqgUk6-rI0ULFgC3Q=s60-p-k" alt="twt"></a>
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </body>
+</html>

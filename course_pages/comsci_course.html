@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>PSHS-CLC KHub: Computer Science 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+        
+        <style>
+            body {
+                background-color: #FAF9F0;
+                width: auto;
+            }
+            .course_header {
+                margin-top: 1.5%;
+                margin-bottom: 1.5%;
+                margin-left: 1%;
+                margin-right: 1%;
+                background-color: #EDDB39;
+                padding-bottom: 7%;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 15px;
+                font-size: 270%;
+                border-radius: 15px;
+                background-image: url(https://lh3.googleusercontent.com/DRIHDSViv9u3S3v4mnVq8QYMuj-Mo6ZbFBDYvau-xbXDLKiXCzCd2DD-9WEYt_lEMB6nfVXNtrsIkbWuNYJ3Xdz9aS-PBKXpZVXAYoBgp8oS4p7SPZFAnl-y_nYJdruan8Hy1FwoWQ=w2400?source=screenshot.guru);
+                background-position:  center;
+                background-size: cover;
+            }
+            
+            .course_name {
+                font-size: 100%;
+                color: #FAF9F0;
+                font-family: 'Poppins', sans-serif;
+            }
+            
+            .course_synch {
+                margin-top: 1.5%;
+                margin-bottom: 1.5%;
+                margin-left: 1%;
+                margin-right: 1%;
+                background-color: #C6B62B;
+                padding-bottom: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 15px;
+                border-radius: 15px;  
+            }
+            
+            .course_synchlink {
+                font-size: 200%;
+                color: #FAF9F0;
+                font-family: 'Poppins', sans-serif;
+            }
+            
+            .course_grades {
+                margin-top: 1.5%;
+                margin-bottom: 1.5%;
+                margin-left: 1%;
+                margin-right: 1%;
+                background-color: #AD9F18;
+                padding-bottom: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 15px;
+                border-radius: 15px;
+            }
+            
+            .course_gradeslink {
+                font-size: 200%;
+                color: #FAF9F0;
+                font-family: 'Poppins', sans-serif;
+            }
+            
+            .quarter1 {
+                margin-top: 6%;
+                margin-bottom: 10%;
+                margin-left: 0%;
+                margin-right: 1%;
+                width: 100%;
+            }
+            
+            .quarter_header {
+                font-size: 250%;
+                color: #C6B62B;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+                margin: 1%;
+            }
+            
+            .heading_container {
+                overflow: hidden;
+                position: relative;
+                border-radius: 15px;
+            }
+            
+            a {
+                color: #FAF9F0;
+            }
+            
+            a:hover{
+                text-decoration: none;
+                color:#011638; 
+            }
+            
+            .LG_heading {
+                font-size: 200%;
+                color: #FAF9F0;
+                font-weight: 500;
+                font-family: 'Poppins', sans-serif;
+                text-align: center;
+                background-color: #EDDB39;
+                border-radius: 15px;
+                padding-top: 40%;
+                padding-bottom: 40%;
+                background-image: url(https://lh3.googleusercontent.com/5sxzR23VHiWSQNCIo6h1QHB-m04d2YJ-3H0iDCtGTywS_Ciufzwch_H8MBGxgYZwtWDktqGBBrU4nDy39Y5ivpq6Z6SIHyBMd0MLKH2RPqG7ONW4n_dyHsrpMRSS9G10p1jk7Ia58g=w2400?source=screenshot.guru);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                transition: all 1s;
+            }
+            
+            .LG_heading:hover {
+                transform: scale(1.2);
+            }
+            
+            .quiz_heading {
+                font-size: 200%;
+                color: #FAF9F0;
+                font-weight: 500;
+                font-family: 'Poppins', sans-serif;
+                text-align: center;
+                background-color: #C6B62B;
+                border-radius: 15px;
+                padding-top: 40%;
+                padding-bottom: 40%;
+                background-image: url(https://lh3.googleusercontent.com/_j_yRw3No_NUoG7jmKgX-b3s8wPXQv-Fo-OLN7at1cN13J_7OrGdnI9gGxR5MWENSTLeyDxNqX9IyTZxAOLuhaZg7t4YCCM_vFjhmxrRUvqh36M0meOSU3e6t5fXDemnm3VdBgQSyw=w2400?source=screenshot.guru);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                transition: all 1s;
+            }
+            
+            .quiz_heading:hover {
+                transform: scale(1.2);
+                
+            }
+            
+            .reco_heading {
+                font-size: 200%;
+                color: #FAF9F0;
+                font-weight: 500;
+                font-family: 'Poppins', sans-serif;
+                text-align: center;
+                background-color: #AD9F18;
+                border-radius: 15px;
+                padding-top: 40%;
+                padding-bottom: 40%;
+                background-image: url(https://lh3.googleusercontent.com/Yiq9o1yy4cGTYXLjzQNqPaitjdUD_2XP099rqTs15JvhfsLYCf0gOt3X0aXgLBfp28bzdlAarkQodHAg6Q7WPMhZYshWionJsxQ53aUXiQeRVKX2y_TXnzZR_DMDtmEztrT1COoTbg=w2400?source=screenshot.guru);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                transition: all 1s;
+            }
+            
+            .reco_heading:hover {
+                transform: scale(1.2);
+            }
+            
+            .col-sm-4 {
+                float: left;
+                margin-bottom: 6%;
+            }
+            
+            .quarter2 {
+                margin-top: 10%;
+                margin-bottom: 1.5%;
+                margin-left: 0%;
+                margin-right: 1%;
+                width: 100%;
+            }
+            
+          
+            .header{
+                background-color: #4D6637; 
+                text-align: center; 
+                width:100%; 
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+            }    
+            
+            .header-mobile{
+                display: none; 
+            }
+            
+            nav{
+                z-index: 1000;
+                padding-top: 100px;
+            }
+            
+            .nav-list {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                background-color: #45503B;
+                position: fixed;
+                height: 100%;
+                overflow: auto;
+                text-align: center; 
+            }
+
+            .nav-icons {
+                display: block;
+                color: #000;
+                padding: 15px 12px;
+                text-decoration: none;
+            }
+
+            .nav-icons:hover {
+                background-color: #04AA6D;
+                color: white;
+            }
+
+            footer{
+                background-color: #4D6637; 
+                width:100%;
+                font-family: 'Poppins', sans-serif;
+                color:#FAF9F0;
+                width:100%; 
+                padding-top: 1%; 
+                padding-bottom: 1%; 
+                margin-top: 37%; 
+            }
+            
+            .footer-text{
+                margin-left:90px; 
+                margin-bottom:0; 
+            }
+            
+            .footer-title{
+                font-size: 150%;
+                font-weight: 500; 
+            }
+            
+            .footer-img{
+                margin-left:1%; 
+                margin-right:2%; 
+            }
+            
+            .footer-contact-cont{
+                width:70%; 
+            }
+            
+            .footer-socmed-cont{
+                width:30%; 
+                text-align: right; 
+
+            }
+            
+            .footer-table{
+                width:100%; 
+            }
+            
+            @media (max-width:757px){
+                .header-laptop{
+                    display: none; 
+                }
+                
+                .header-mobile{
+                    display: inline; 
+                }
+                
+                .footer-contact-cont{
+                    width:50%; 
+                }
+                
+                .footer-img{
+                    margin-bottom: 1%;  
+                }
+            }
+            
+            .sticky {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000; 
+                }
+
+            .sticky-lag {
+                padding-top: 100px;
+                }
+            
+            .content{
+                margin-left:49px; 
+            }
+            
+            @media (max-width:576px){
+                footer{
+                    margin-top:280%; 
+                }
+                .nav{
+                    display:none; 
+                }
+                
+                .content{
+                    margin-left: 0px;
+                    padding-top: 100px; 
+                }
+                
+                .footer-text{
+                margin-left:5%; 
+                }
+            }
+            
+            .nav-icons img{
+                width:25px;
+                height:25px; 
+            }
+            
+        </style>
+
+    </head>
+    
+    <body>
+        <header>
+            <div class="col-sm-12 header" id="myHeader"> 
+                <a href="../dashboard.html"><img src="https://lh3.googleusercontent.com/622fv84S7CPypJ-jErVsAYV-ed6DTRF06Wig_PNkPZLiuBJ4UDvg_WJUQJXlkAJCHN1dGMiVgWVJI0HzicShQUQdZTD5yhsfbbW93OYtzGMxU_3I4K8JEy_R-WMOzjJ8nDdmC2VFQA=w2400" alt="header" class="header-laptop"></a>
+                <a href="../dashboard.html"><img src="https://lh3.googleusercontent.com/K2IGB9gR-x1t7pR6o9mo5t5jrbWWp0PwrQ1uXb5G0503o9ptUDKbfm7MVLbA1FVV5JjSZgmB5mXCafYOv97JiP-l_rGnDsL-XIRrLfsYroLwQYGdck-_0RNPiL8cEQQ3YckXtNL9Iw=w2400" alt="header mobile" class="header-mobile"></a> 
+            </div>
+        </header>
+        
+        <nav class="nav" id="myNav">
+            <ul class="nav-list">
+              <li><a class="nav-icons" href="../dashboard.html"><img src="https://lh3.googleusercontent.com/OxaHYhCpMKaaKlrGXVnKAgTmCdi7lJzDf3IQbEQ2turqz0lb1BJ-Z_QOu55OQa9kbrY1BcdTGLwF63n7pmZ1MS4TkRhbiB5br6Ifq3oMjjaWcV6fLMoszqQT5iPp96YCl02G7s5Yvw=s300-p-k" alt="home"></a></li>
+              <li><a class="nav-icons" href="#"><img src="https://lh3.googleusercontent.com/zCdpxD4yN4wpmR9tR4ZvWSkhdKDk8IYJLOfci9KYNvsKoyelx1Jrtsrw8hFsrqB4NjQShdXESJr9kU0ePqztd4MSSynZAeY_DcieuK1V76AGNrteL0dcM0vOEsRQ8w02J50DQqYv7Q=s300-p-k" alt="notif"></a></li>
+              <li><a class="nav-icons" href="../author_page/about_us.html"><img src="https://lh3.googleusercontent.com/IK1p9WUksYZ4BiOAT8f71yq5WmoV1eWZ86njfU-JZUdASpPYPD_VPit-vEty6Q7kbBP3aNpeQw6hiaCZqRxJposf4rdCACOi5KVj7gVlRoHS0_LPHReKXyU5jraLicZetceWdb_Wlg=s300-p-k" alt="group"></a></li>
+            </ul>
+        </nav>
+        
+        <div class="content" id="myContent">
+            <div class="container-fluid">
+                <div class="col-sm-12">
+                    <div class="course_header"><a class="course_name" href="#">Computer Science</a></div>
+                    <div class="course_synch"><a class="course_synchlink" href="https://meet.google.com/jox-vkzs-sqs">Synchronous Meeting Link</a></div>
+                    <div class="course_grades"><a class="course_gradeslink" href="../grade_pages/comsci_grades.html">Grades</a></div>
+                </div>
+
+                <div class="quarter1">
+                    <div class="quarter_header">1st Quarter</div>
+                    <div class="col-sm-4" style="float: left;"><div class="heading_container"><div class="LG_heading"><a href="https://drive.google.com/drive/folders/1Go31ZqouUyDSl-DXNZRF7w4b6zhPd-P5?usp=sharing">Learning<br/>Guides</a></div></div></div>
+                    <div class="col-sm-4" style="float: left;"><div class="heading_container"><div class="quiz_heading"><a href="../quiz_pages/comsci_quiz.html">Graded<br/>Quiz</a></div></div></div>
+                    <div class="col-sm-4" style="float: left;"><div class="heading_container"><div class="reco_heading"><a href="https://youtu.be/xmmfWcR65kI">Synchronous<br/>Recording</a></div></div></div>
+                </div>
+                
+                <p></p><br/>
+                
+                <div class="quarter2">
+                    <div class="quarter_header" style="padding-top: 18%;">2nd Quarter</div>
+                    <div class="col-sm-4" style="float: left;"><div class="heading_container"><div class="LG_heading"><a href="https://drive.google.com/drive/folders/1CfPIw9zw8cH75SuoMX3Vlxx0ncZ6JAdL?usp=sharing">Learning<br/>Guides</a></div></div></div>
+                    <div class="col-sm-4" style="float: left;"><div class="heading_container"><div class="quiz_heading"><a href="../quiz_pages/comsci_quiz.html">Graded<br/>Quiz</a></div></div></div>
+                    <div class="col-sm-4" style="float: left;"><div class="heading_container"><div class="reco_heading"><a href="https://youtu.be/lAOkx2yZESY">Synchronous<br/>Recording</a></div></div></div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <table class="footer-table">
+                <tr>
+                    <td class="footer-contact-cont">
+                        <p class="footer-title footer-text">PSHS-CLC</p>
+                        <p class="footer-text">Lily Hill, Clark, Angeles, Pampanga</p>
+                        <p class="footer-text">0999-333-3333</p>
+                        <p class="footer-text">khub@clc.pshs.edu.ph</p>
+                    </td>
+                    <td class="footer-socmed-cont">
+                        <a href="https://www.facebook.com/pshsclc/" class="footer-img"><img src="https://lh3.googleusercontent.com/H9PdnpXae8YtuIAxPoCe9m1g2tHQ7TKHjxkYNUK1_7oSE0aUArmcB8TPtUINNuq5xos9404uix6DHUVEuN36xX6aE3VpAV4c53XWWOu9VYTVjLW-DGWtrXMXRXB8s0WAjUAMajZptw=s60-p-k" alt="fb" ></a>
+                        <a href="https://www.instagram.com/pshs_clc" class="footer-img"><img src="https://lh3.googleusercontent.com/9freN4Vt9mmb8LCT9-2EBVrm40OWz6dkJKIPLeXI6Qx9c2LhCDxR-qildPE5ijB8pW2xehsJ6hdlimfFnTOB9-juERsEg8o5TUE0Yh1JVakGg7eXL41msnWmfp5HOkBWSEuStkc8Dg=s60-p-k" alt="ig"></a>
+                        <a href="https://twitter.com/pshs_clc" class="footer-img"><img src="https://lh3.googleusercontent.com/2aq1KLuOkp7jzydEw_tvZwKX3z0bYfthk6467nixWQEHYyv0PeNNQlej0FxMW_eV4nggSdd3UTMuZw4ylno1YH44428oLKnGothWKQZSK-hvAThK2AimuKoelZqgUk6-rI0ULFgC3Q=s60-p-k" alt="twt"></a>
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </body>
+</html>

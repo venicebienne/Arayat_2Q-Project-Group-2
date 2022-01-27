@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <meta charset="UTF-8">
+        <title>PSHS-CLC Knowledge Hub</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+        
+        <style>
+             body {
+                background-color: #FAF9F0;
+                width: auto;
+            }
+            
+            .header{
+                background-color: #4D6637; 
+                text-align: center; 
+                width:100%; 
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+            }    
+            
+            .header-mobile{
+                display: none; 
+            }
+            
+            nav{
+                z-index: 1000;
+                padding-top: 100px;
+            }
+            
+            .nav-list {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                background-color: #45503B;
+                position: fixed;
+                height: 100%;
+                overflow: auto;
+                text-align: center; 
+            }
+
+            .nav-icons {
+                display: block;
+                color: #000;
+                padding: 15px 12px;
+                text-decoration: none;
+            }
+
+            .nav-icons:hover {
+                background-color: #04AA6D;
+                color: white;
+            }
+
+            footer{
+                background-color: #4D6637; 
+                width:100%;
+                font-family: 'Poppins', sans-serif;
+                color:#FAF9F0;
+                width:100%; 
+                padding-top: 1%; 
+                padding-bottom: 1%; 
+                float: left;
+                
+            }
+            
+            .footer-text{
+                margin-left:90px; 
+                margin-bottom:0; 
+            }
+            
+            .footer-title{
+                font-size: 150%;
+                font-weight: 500; 
+            }
+            
+            .footer-img{
+                margin-left:1%; 
+                margin-right:2%; 
+            }
+            
+            .footer-contact-cont{
+                width:70%; 
+            }
+            
+            .footer-socmed-cont{
+                width:30%; 
+                text-align: right; 
+
+            }
+            
+            .footer-table{
+                width:100%; 
+            }
+            
+            .quiz{
+                margin-right:6%;
+                margin-left:2%;
+                margin-top:2%;
+            }
+            
+            
+            #content-quiz{
+                font-size: 12vw;
+                font-family: 'Poppins', sans-serif;
+                background-color: #fbbc05;
+                color: white;
+                width: 100%;
+                border-radius: 15px;
+                background-image: url(https://lh3.googleusercontent.com/_pedEENY0B66BB1bxA9fmQOATGq6l1hfedXIJvbMgT1X_NQuz2qajHHv7wVwVTi_HK4XgUc4ndVzRZ8MdPdK-Q5Dla9_ceAaAq0uVXyMo_I5gyLL9Blpn4S4focb_oqvszAm72-P1A=w2400);
+                 height: 15%;
+                background-position: right;
+                margin: 2vw;
+                background-size: 40vw;
+                background-repeat: no-repeat; 
+                padding-left: 1vw;
+              
+            } 
+
+            #content-comsci{
+                background-color: #eddb39;
+                font-size: 4vw;
+                width: 100%;
+                border-radius: 15px;
+                color: #FAF9F0;
+                text-align: center;
+                font-family: 'Poppins', sans-serif;
+                margin-bottom: 2vw;
+                margin-right: 2vw;
+                margin-left: 2vw;
+            }
+            
+            #content-number-bar {
+                
+                background-color: #857888;
+
+                width: 100%;
+                border-radius: 15px;
+                margin-bottom: 2.5%;
+                margin-right: 2%;
+                margin-left: 2%;
+                
+            }
+            .numbers {
+                font-size: 4vw;
+                display:inline-block;
+                width: 7.5%;
+                border-radius: 20px;
+                padding: 0.5%;
+                margin-top: 1%;
+                margin-bottom: 1%;
+                margin-left: 1.1%;
+                margin-right: 1%;
+                font-family: 'Poppins', sans-serif;
+                color: white;
+                background-color: #364156;
+                text-align: center;
+            } 
+
+            .numbers a{
+
+                color: white;
+
+            }
+
+            .numbers a:hover{
+
+                text-decoration: none;
+                color: #b7b7b8;
+               
+            }
+
+            .q{
+                font-size: 3.5vw;
+                margin-left: 1.8%;
+                color: #364156;
+                background-color: #eddb39;
+                display: inline-block;
+                font-family: 'Poppins', sans-serif;
+                border-radius: 50px;
+                margin-right: 1%;
+                padding-top: 1%;
+                padding-bottom: 1%;
+                padding-left: 2%;
+                padding-right: 2%;
+            }
+
+              .qother{
+                font-size: 3.5vw;
+                margin-left: 1.8%;
+                color: #364156;
+                background-color: #eddb39;
+                display: inline-block;
+                font-family: 'Poppins', sans-serif;
+                border-radius: 50px;
+                margin-right: 1%;
+                padding-top: 1%;
+                padding-bottom: 1%;
+                padding-left: 2%;
+                padding-right: 2%;
+                margin-top: 2%;   
+            }
+
+             #finishattempt{
+                font-size: 3vw;
+                color: #cdcdcd;
+                background-color: #fbbc05;
+                font-family: 'Poppins', sans-serif;
+                border-radius: 50px;
+                padding-top:1%;
+                padding-left:2%;
+                padding-right:2%;
+                margin-top: 1%;
+                float: right;
+                position:  relative;
+                left: 1.9vw;
+               margin-bottom: 2%;
+            
+             }
+            
+            #fa{
+                font-size: 3vw;
+                padding-bottom:1%;
+            }
+
+
+            
+            #fa a{
+
+                color: white;
+            }
+
+            #fa a:hover{
+
+                text-decoration: none;
+                color: #eddb39;
+               
+            }
+
+
+            
+
+            .question-cont{
+                background-color: #CDCDCD;
+                float:none;
+                border-radius: 15px;
+                display: block;
+                margin-left:2%;
+                width:100%;
+                padding-top: 1vw;
+                padding-bottom: 2vw;
+
+            }
+            
+            .question-text-main{
+                font-family: 'Poppins', sans-serif;
+                font-size: 2.4vw;
+                margin-left:2%;
+                margin-right:2%;
+                padding-top:1%;
+                font-weight: 500;
+                margin-bottom: 0; 
+                
+            }
+
+            .choices1{
+                font-size:2vw;
+                vertical-align: center;
+            }
+
+            input.larger{
+                width: 2vw;
+                height: 2vw;
+                vertical-align: center;
+                margin-left: 6%;
+                
+            }
+        
+            @media (max-width:757px){
+                .header-laptop{
+                    display: none; 
+                }
+                
+                .header-mobile{
+                    display: inline; 
+                }
+                
+                .footer-contact-cont{
+                    width:50%; 
+                }
+                
+                .footer-img{
+                    margin-bottom: 1%;  
+                }
+            }
+            
+            .sticky {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000; 
+                }
+
+            .sticky-lag {
+                padding-top: 100px;
+                }
+            
+            .content{
+                margin-left:49px; 
+            }
+            
+             @media (max-width:576px){
+                .nav{
+                    display:none; 
+                }
+                
+                .content{
+                    margin-left: 0px;
+                    padding-top: 100px; 
+                }
+                
+                .footer-text{
+                margin-left:5%; 
+                }
+            }
+            
+            .nav-icons img{
+                width:25px;
+                height:25px; 
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+       <header>
+            <div class="col-sm-12 header" id="myHeader"> 
+                <a href="../dashboard.html"><img src="https://lh3.googleusercontent.com/622fv84S7CPypJ-jErVsAYV-ed6DTRF06Wig_PNkPZLiuBJ4UDvg_WJUQJXlkAJCHN1dGMiVgWVJI0HzicShQUQdZTD5yhsfbbW93OYtzGMxU_3I4K8JEy_R-WMOzjJ8nDdmC2VFQA=w2400" alt="header" class="header-laptop"></a>
+                <a href="../dashboard.html"><img src="https://lh3.googleusercontent.com/K2IGB9gR-x1t7pR6o9mo5t5jrbWWp0PwrQ1uXb5G0503o9ptUDKbfm7MVLbA1FVV5JjSZgmB5mXCafYOv97JiP-l_rGnDsL-XIRrLfsYroLwQYGdck-_0RNPiL8cEQQ3YckXtNL9Iw=w2400" alt="header mobile" class="header-mobile"></a> 
+            </div>
+        </header>
+        
+        <nav class="nav" id="myNav">
+            <ul class="nav-list">
+              <li><a class="nav-icons" href="../dashboard.html"><img src="https://lh3.googleusercontent.com/OxaHYhCpMKaaKlrGXVnKAgTmCdi7lJzDf3IQbEQ2turqz0lb1BJ-Z_QOu55OQa9kbrY1BcdTGLwF63n7pmZ1MS4TkRhbiB5br6Ifq3oMjjaWcV6fLMoszqQT5iPp96YCl02G7s5Yvw=s300-p-k" alt="home"></a></li>
+              <li><a class="nav-icons" href="#"><img src="https://lh3.googleusercontent.com/zCdpxD4yN4wpmR9tR4ZvWSkhdKDk8IYJLOfci9KYNvsKoyelx1Jrtsrw8hFsrqB4NjQShdXESJr9kU0ePqztd4MSSynZAeY_DcieuK1V76AGNrteL0dcM0vOEsRQ8w02J50DQqYv7Q=s300-p-k" alt="notif"></a></li>
+              <li><a class="nav-icons" href="../author_page/about_us.html"><img src="https://lh3.googleusercontent.com/IK1p9WUksYZ4BiOAT8f71yq5WmoV1eWZ86njfU-JZUdASpPYPD_VPit-vEty6Q7kbBP3aNpeQw6hiaCZqRxJposf4rdCACOi5KVj7gVlRoHS0_LPHReKXyU5jraLicZetceWdb_Wlg=s300-p-k" alt="group"></a></li>
+            </ul>
+        </nav>
+        
+        <div class="content" id="myContent">
+            <div class="quiz">
+            <div id="content-quiz">Quiz</div>
+            <div id="content-comsci">Computer Science</div>
+            <div id="content-number-bar">
+                <div class="numbers"><a href="#question-one">1</a></div>
+                <div class="numbers"><a href="#question-two">2</a></div>
+                <div class="numbers"><a href="#question-three">3</a></div>
+                <div class="numbers"><a href="#question-four">4</a></div>
+                <div class="numbers"><a href="#question-five">5</a></div>
+                <div class="numbers"><a href="#question-six">6</a></div>
+                <div class="numbers"><a href="#question-seven">7</a></div>
+                <div class="numbers"><a href="#question-eight">8</a></div>
+                <div class="numbers"><a href="#question-nine">9</a></div>
+                <div class="numbers"><a href="#question-ten">10</a></div>
+            </div>
+
+            <div class="questions">
+
+            <div id="question-one"> 
+                <h1 class="q">Question 1</h1>
+            
+            </div>
+
+            <div class="question-cont">
+                <p class="question-text-main">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</p>
+
+               <form class="choices1">
+                    <input type="checkbox" id="choice1" name="choice1" class=larger value="c1">
+                    <label for="choice1">lorem ipsum dolor</label><br>
+                    <input type="checkbox" id="choice2" name="choice2" class=larger  value="c2">
+                    <label for="choice2">vestibulum lorem sed</label><br>
+                    <input type="checkbox" id="choice3" name="choice3" class=larger  value="c3">
+                    <label for="choice3">vel risus commodo</label><br>
+                    <input type="checkbox" id="choice4" name="choice4" class=larger  value="c4">
+                    <label for="choice4">scelerisque purus semper</label>
+                  </form>   
+
+            </div>
+
+           <div id="question-two">
+                <h1 class="qother">Question 2</h1>
+            
+            </div>
+
+             <div class="question-cont">
+                <p class="question-text-main">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</p>
+
+               <form class="choices1">
+                    <input type="checkbox" id="choice5" name="choice1" class=larger value="c1">
+                    <label for="choice1">lorem ipsum dolor</label><br>
+                    <input type="checkbox" id="choice6" name="choice2" class=larger  value="c2">
+                    <label for="choice2">vestibulum lorem sed</label><br>
+                    <input type="checkbox" id="choice7" name="choice3" class=larger  value="c3">
+                    <label for="choice3">vel risus commodo</label><br>
+                    <input type="checkbox" id="choice78" name="choice4" class=larger  value="c4">
+                    <label for="choice4">scelerisque purus semper</label>
+                  </form>   
+
+            </div>
+
+            <div id="question-three">
+                <h1 class="qother">Question 3</h1>
+            
+            </div>
+
+             <div class="question-cont">
+                <p class="question-text-main">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</p>
+
+               <form class="choices1">
+                    <input type="checkbox" id="choice8" name="choice1" class=larger value="c1">
+                    <label for="choice1">lorem ipsum dolor</label><br>
+                    <input type="checkbox" id="choice9" name="choice2" class=larger  value="c2">
+                    <label for="choice2">vestibulum lorem sed</label><br>
+                    <input type="checkbox" id="choice10" name="choice3" class=larger  value="c3">
+                    <label for="choice3">vel risus commodo</label><br>
+                    <input type="checkbox" id="choice11" name="choice4" class=larger  value="c4">
+                    <label for="choice4">scelerisque purus semper</label>
+                  </form>   
+
+            </div>
+
+             <div id="question-four">
+                <h1 class="qother">Question 4</h1>
+            
+            </div>
+
+             <div class="question-cont">
+                <p class="question-text-main">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</p>
+
+               <form class="choices1">
+                    <input type="checkbox" id="choice12" name="choice1" class=larger value="c1">
+                    <label for="choice1">lorem ipsum dolor</label><br>
+                    <input type="checkbox" id="choice13" name="choice2" class=larger  value="c2">
+                    <label for="choice2">vestibulum lorem sed</label><br>
+                    <input type="checkbox" id="choice14" name="choice3" class=larger  value="c3">
+                    <label for="choice3">vel risus commodo</label><br>
+                    <input type="checkbox" id="choice15" name="choice4" class=larger  value="c4">
+                    <label for="choice4">scelerisque purus semper</label>
+                  </form>   
+
+            </div>
+                
+            <div id="question-five">
+                <h1 class="qother">Question 5</h1>
+            
+            </div>
+                
+             <div class="question-cont">
+                <p class="question-text-main">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</p>
+
+               <form class="choices1">
+                    <input type="checkbox" id="choice16" name="choice1" class=larger value="c1">
+                    <label for="choice1">lorem ipsum dolor</label><br>
+                    <input type="checkbox" id="choice17" name="choice2" class=larger  value="c2">
+                    <label for="choice2">vestibulum lorem sed</label><br>
+                    <input type="checkbox" id="choice18" name="choice3" class=larger  value="c3">
+                    <label for="choice3">vel risus commodo</label><br>
+                    <input type="checkbox" id="choice19" name="choice4" class=larger  value="c4">
+                    <label for="choice4">scelerisque purus semper</label>
+                  </form>   
+
+            </div>
+        
+        <div id="question-six">
+            <h1 class="qother">Question 6</h1>
+        
+        </div>
+
+         <div class="question-cont">
+                <p class="question-text-main">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</p>
+
+               <form class="choices1">
+                    <input type="checkbox" id="choice20" name="choice1" class=larger value="c1">
+                    <label for="choice1">lorem ipsum dolor</label><br>
+                    <input type="checkbox" id="choice21" name="choice2" class=larger  value="c2">
+                    <label for="choice2">vestibulum lorem sed</label><br>
+                    <input type="checkbox" id="choice22" name="choice3" class=larger  value="c3">
+                    <label for="choice3">vel risus commodo</label><br>
+                    <input type="checkbox" id="choice23" name="choice4" class=larger  value="c4">
+                    <label for="choice4">scelerisque purus semper</label>
+                  </form>   
+
+            </div>
+
+         <div id="question-sevem">
+            <h1 class="qother">Question 7</h1>
+        
+        </div>
+         <div class="question-cont">
+                <p class="question-text-main">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</p>
+
+               <form class="choices1">
+                    <input type="checkbox" id="choice24" name="choice1" class=larger value="c1">
+                    <label for="choice1">lorem ipsum dolor</label><br>
+                    <input type="checkbox" id="choice25" name="choice2" class=larger  value="c2">
+                    <label for="choice2">vestibulum lorem sed</label><br>
+                    <input type="checkbox" id="choice26" name="choice3" class=larger  value="c3">
+                    <label for="choice3">vel risus commodo</label><br>
+                    <input type="checkbox" id="choice27" name="choice4" class=larger  value="c4">
+                    <label for="choice4">scelerisque purus semper</label>
+                  </form>   
+
+            </div>
+                
+        <div id="question-eight">
+            <h1 class="qother">Question 8</h1>
+        
+        </div>
+
+         <div class="question-cont">
+                <p class="question-text-main">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</p>
+
+               <form class="choices1">
+                    <input type="checkbox" id="choice28" name="choice1" class=larger value="c1">
+                    <label for="choice1">lorem ipsum dolor</label><br>
+                    <input type="checkbox" id="choice29" name="choice2" class=larger  value="c2">
+                    <label for="choice2">vestibulum lorem sed</label><br>
+                    <input type="checkbox" id="choice30" name="choice3" class=larger  value="c3">
+                    <label for="choice3">vel risus commodo</label><br>
+                    <input type="checkbox" id="choice31" name="choice4" class=larger  value="c4">
+                    <label for="choice4">scelerisque purus semper</label>
+                  </form>   
+
+            </div>
+                
+        <div id="question-nine">
+            <h1 class="qother">Question 9</h1>
+        
+        </div>
+
+         <div class="question-cont">
+                <p class="question-text-main">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</p>
+
+               <form class="choices1">
+                    <input type="checkbox" id="choice32" name="choice1" class=larger value="c1">
+                    <label for="choice1">lorem ipsum dolor</label><br>
+                    <input type="checkbox" id="choice33" name="choice2" class=larger  value="c2">
+                    <label for="choice2">vestibulum lorem sed</label><br>
+                    <input type="checkbox" id="choice34" name="choice3" class=larger  value="c3">
+                    <label for="choice3">vel risus commodo</label><br>
+                    <input type="checkbox" id="choice35" name="choice4" class=larger  value="c4">
+                    <label for="choice4">scelerisque purus semper</label>
+                  </form>   
+
+            </div>
+                
+        <div id="question-ten">
+            <h1 class="qother">Question 10</h1>
+        
+        </div>
+
+         <div class="question-cont" style="margin-bottom: 2.5%;">
+                <p class="question-text-main">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</p>
+
+               <form class="choices1">
+                    <input type="checkbox" id="choice36" name="choice1" class=larger value="c1">
+                    <label for="choice1">lorem ipsum dolor</label><br>
+                    <input type="checkbox" id="choice37" name="choice2" class=larger  value="c2">
+                    <label for="choice2">vestibulum lorem sed</label><br>
+                    <input type="checkbox" id="choice38" name="choice3" class=larger  value="c3">
+                    <label for="choice3">vel risus commodo</label><br>
+                    <input type="checkbox" id="choice39" name="choice4" class=larger  value="c4">
+                    <label for="choice4">scelerisque purus semper</label>
+                  </form>   
+
+            </div>
+
+        </div>
+            <div id="finishattempt">
+                <h1 id="fa"><a href="#">Finish Attempt</a></h1>
+            </div>
+        </div>
+        </div>
+   
+        <footer>
+            <table class="footer-table">
+                <tr>
+                    <td class="footer-contact-cont">
+                        <p class="footer-title footer-text">PSHS-CLC</p>
+                        <p class="footer-text">Lily Hill, Clark, Angeles, Pampanga</p>
+                        <p class="footer-text">0999-333-3333</p>
+                        <p class="footer-text">khub@clc.pshs.edu.ph</p>
+                    </td>
+                    <td class="footer-socmed-cont">
+                        <a href="https://www.facebook.com/pshsclc/" class="footer-img"><img src="https://lh3.googleusercontent.com/H9PdnpXae8YtuIAxPoCe9m1g2tHQ7TKHjxkYNUK1_7oSE0aUArmcB8TPtUINNuq5xos9404uix6DHUVEuN36xX6aE3VpAV4c53XWWOu9VYTVjLW-DGWtrXMXRXB8s0WAjUAMajZptw=s60-p-k" alt="fb" ></a>
+                        <a href="https://www.instagram.com/pshs_clc" class="footer-img"><img src="https://lh3.googleusercontent.com/9freN4Vt9mmb8LCT9-2EBVrm40OWz6dkJKIPLeXI6Qx9c2LhCDxR-qildPE5ijB8pW2xehsJ6hdlimfFnTOB9-juERsEg8o5TUE0Yh1JVakGg7eXL41msnWmfp5HOkBWSEuStkc8Dg=s60-p-k" alt="ig"></a>
+                        <a href="https://twitter.com/pshs_clc" class="footer-img"><img src="https://lh3.googleusercontent.com/2aq1KLuOkp7jzydEw_tvZwKX3z0bYfthk6467nixWQEHYyv0PeNNQlej0FxMW_eV4nggSdd3UTMuZw4ylno1YH44428oLKnGothWKQZSK-hvAThK2AimuKoelZqgUk6-rI0ULFgC3Q=s60-p-k" alt="twt"></a>
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </body>
+</html>

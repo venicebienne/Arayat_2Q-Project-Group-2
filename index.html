@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>PSHS-CLC Knowledge Hub</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        
+        <style>
+            body{
+                background: url(https://lh3.googleusercontent.com/SPJdNg5y74xyowtfRWK9i-fM2Hazs40sQxLWZNQji2JYvu7Y14fc_0S-GfN6h7sEIzgI8fSrBymHKRRAZIN0qJiAaa-YUcDMY0xfd2GBcV7LppnQEeNDTLvpkeNcJ-biatkPeNOiqw=w2400) no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                background-position: center;
+                display:flex; 
+                flex-direction:column; 
+                justify-content:center;
+                min-height:100vh;
+                margin-left:5%; 
+                margin-right:5%;
+            }
+        
+            .first-cont{
+                width:45%; 
+                float:left; 
+            }
+            
+            .first-cont img{
+                width:10vw;
+                height:10vw;
+            }
+            
+            .text-cont{
+                line-height: 1.4;
+                padding-left:3%; 
+            }
+            
+            .dost-text{
+                font-size: 2vw;
+                color: #FAF9F0;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:600;
+                margin:0px; 
+            }
+            
+            .clc-text{
+                font-size: 1.4vw;
+                color: #FAF9F0;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:400;
+                margin:0px; 
+            }
+            
+            .welcome-cont{
+                background-color: #FAF9F0;
+                display: inline-block;
+                border-radius: 50px;
+                position: absolute;
+                padding-top:0.8%; 
+                padding-bottom:0.8%; 
+                padding-left:2%; 
+                padding-right:2%; 
+                margin-top: 2%;
+                text-align: center;
+                font-size: 1.9vw;
+                color: #4D6637;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:600;
+                width:40.5%
+            }
+            
+            .welcome-cont p{
+                margin:0px;
+            }
+            
+            
+            .logo-text-cont{
+                width: 45%; 
+            }
+            
+            .video-cont{
+                background-color: #BE8C6D; 
+                padding-left:2%;
+                padding-right: 2%;
+                padding-top:2.5%;
+                padding-bottom:2%;
+                margin-top:21%;
+                border-radius: 15px;
+                width:100%;
+            }
+            
+            .video-cont iframe{
+                width:38.5vw;
+                height:22vw; 
+            }
+            
+            .second-cont{
+                width:35%; 
+                float:left; 
+                margin-left:15%; 
+                margin-right:0;
+                
+            }
+            
+            .login-all{
+                background-color: #4D6637; 
+                border-radius: 15px; 
+                width:100%;
+            }
+            
+            .login-cont{
+                text-align: center; 
+                padding-top:28%;
+                position: relative;
+                
+            }
+            
+            .login-cont img{
+                position:absolute;
+                top:2vw; 
+                left:10.3vw;
+                width:10.5vw;
+                height:10.5vw; 
+            }
+            
+            .username-pass-cont {
+                background-color: #FAF9F0; 
+                border-radius: 15px; 
+                margin-left: 5%;
+                margin-right: 5%;
+                padding-top: 15%;
+                padding-bottom: 1%; 
+                font-size: 1.9vw;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:600;
+            }
+            
+            .username-passcode{
+                background-color: #E6E3DE;
+                margin-left:5%;
+                margin-right:5%;
+                border-radius: 15px; 
+            }
+            
+            .username-passcode-text{
+                font-size: 1.9vw;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:500;
+                opacity: 0.50; 
+                color:#BF6F0D; 
+                padding-left:5%
+            }
+            
+            .divide{
+                background-color:#4D6637; 
+                width:80%;
+                height:0.3vw; 
+                margin-left:10%;
+                border-radius: 150px;
+                margin-right:20%;
+                margin-bottom: 3%;
+            }
+            
+            .login-button{
+                margin-left: 30%; 
+                margin-right: 30%; 
+                border-radius: 50px; 
+                background-color: #FAF9F0; 
+                font-size: 2.1vw;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:600;
+                opacity:0.85; 
+                color:#BF6F0D; 
+                text-align: center;
+                margin-top: 4%;
+                margin-bottom: 4%; 
+                padding-top: 1%;
+                padding-bottom: 1%; 
+            }
+            
+            .login-button a{
+                color:#BF6F0D;
+                opacity:0.85; 
+            }
+            
+            .login-button:hover{
+                text-decoration: none;
+                opacity: 1; 
+            }
+            
+            .login-button a:hover{
+                text-decoration: none;
+                opacity: 1; 
+            }
+            
+            .google-signin{
+                background-color: #FAF9F0; 
+                border-radius: 15px; 
+                font-size: 2vw;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:600;
+                padding-top: 5%;
+                padding-bottom: 0.5%;
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+            
+            .google-button{
+                background-color: #4D6637; 
+                border-radius: 15px;
+                padding-top:3%; 
+                padding-bottom:3%; 
+                padding-left:2%; 
+            }
+            
+            .google-text{
+                font-family: 'Poppins', sans-serif; 
+                font-weight:500;
+                opacity:0.85; 
+                color:#FAF9F0;
+            }
+            
+            .google-button img{
+                width:5vw;
+                height:5vw;
+            }
+            
+            .google-button:hover a{
+                opacity:1; 
+            }
+            
+            .google-button a:hover{
+                text-decoration: none; 
+                color:#EDDB39; 
+            }
+            
+            .help-text{
+                font-size: 1.2vw;
+                font-family: 'Poppins', sans-serif; 
+                font-weight:400;
+                margin-top:3%
+            }
+            
+            @media(max-width:768px){
+                body{
+                    margin-top:5%;
+                }
+                
+                .main-cont{
+                    width:100%; 
+                }
+                
+                .first-cont{
+                    width:100%; 
+                    float:none; 
+                    margin-bottom: 5%
+                }
+                
+                .logo-cont{
+                    width:75px; 
+                    height:75px; 
+                }
+                
+                .logo-cont img{
+                    width:90px; 
+                    height:90px; 
+                }
+                
+                .dost-text{
+                    font-size: 120%;
+                }
+                
+                .clc-text{
+                    font-size: 90%;
+                }
+                
+                .welcome-cont{
+                    font-size: 120%
+                }
+                .video-cont{
+                    margin-top:12%;
+                    width:105%;   
+                }
+                
+                .video-cont iframe{
+                    width: 84vw;
+                    height: 40vw;
+                }
+                
+                .welcome-cont{
+                    width:90%; 
+                    
+                }
+                
+                .second-cont{
+                    width:70%; 
+                    float:none; 
+                    margin-left:15%;
+                }
+                
+                .login-cont img{
+                    position:absolute;
+                    top:6vw; 
+                    left:23vw;
+                    width:17.5vw;
+                    height:17.5vw; 
+                }
+                
+                .username-passcode-text{
+                    font-size:180%; 
+                }
+                
+                .login-button a{
+                    font-size:200%; 
+                }
+                
+                .google-button img{
+                    width:7vw;
+                    height:7vw;
+                }
+                
+                .google-text{
+                    font-size:180%;
+                    padding-left:4%;
+
+                    
+                }
+                
+                .help-text{
+                    font-size:130%;
+                }
+            }
+            
+            @media(max-width:420px){
+                
+                .video-cont{
+                    display:none;
+                }
+                
+                .first-cont{
+                    margin-bottom: 23%;
+                }
+                
+                
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="main-cont">
+            <div class="first-cont">
+                <table>
+                    <tr class="logo-text-cont">
+                        <td class="logo-cont">
+                            <img src="https://lh3.googleusercontent.com/no_vecGMmdcUu88an2f-xGzlp4FIW_bIJryjXspgjnBx9aSTkyWWNwUkDz2qodtx4T7MQpD8Az9cRP5MxkVJsfSai8eE2ispZs4kIKSgb6Lk_uQVuYcyHab8HF73kwbO5Y_bqxotlw=w2400" alt="peesigh see el see">
+                        </td>
+                        <td class="text-cont">
+                            <p class="dost-text">DEPARTMENT OF SCIENCE AND TECHNOLOGY</p>
+                            <p class="clc-text">PHILIPPINE SCIENCE HIGH SCHOOL CENTRAL LUZON CAMPUS</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="welcome-cont"><p>WELCOME TO CLC'S KNOWLEDGE HUB!</p></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="video-cont">
+                                <iframe src="https://www.youtube-nocookie.com/embed/ZbASYUVUD_w" title="YouTube video player" style="border-width:0px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="second-cont">
+                <table class="login-all">
+                    <tr>
+                        <td>
+                            <div class="login-cont">
+                                 <img src="https://lh3.googleusercontent.com/1lgnY3aAVI0xzgEJIGjW4bNppGeHJEz_zD7taPs-hT7-wAXCAXbT307kmx6AHXQBM4XlVUZfuWvnGuj_Q0q2Zvv2HqlpiHGscicCyfM_797S8BExCbH4V86TXPhL2l1S7_663fDUZA=w2400" alt="student profile">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="username-pass-cont">
+                                <div class="username-passcode">
+                                    <p class="username-passcode-text"> USERNAME...</p>
+                                </div>
+                                <div class="divide"></div>
+                                <div class="username-passcode">
+                                    <p class="username-passcode-text"> PASSCODE...</p>
+                                </div>
+                            </div>
+                            
+                            <div class="login-button">
+                                <a href="dashboard.html">LOGIN</a>
+                            </div>
+                            
+                            <div class="google-signin">
+                                <div class="google-button">
+                                    <img src="https://lh3.googleusercontent.com/RXRYXyFcSPtneOaBBG6F56AHmydhUclnXz-eZBhkymGWIwR-6XWNcGAjSkR3et6yuxvt4nGB4e-RSsY2gLD3uRbtercxOaZ4aJ__jlsvjtAu7rWfWtThPE27FHVKpTIos_c2M0zUaQ=s171-p-k" alt="google">
+                                    <a href="dashboard.html" class="google-text"> SIGN IN WITH GOOGLE</a>
+                                </div>
+                                <p class="help-text">Forgot your username or password? Contact technical support at help@clc.pshs.edu.ph</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
